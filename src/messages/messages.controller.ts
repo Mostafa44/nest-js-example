@@ -7,9 +7,9 @@ import { CreateMessageDto } from './dtos/create-message.dto';
 export class MessagesController {
 
     messagesService :MessagesService;
-    constructor(){
-        //this should be done using Dependency Injection
-        this.messagesService= new MessagesService();
+    constructor(messagesServc:MessagesService){
+        this.messagesService= messagesServc;
+       
     }
 
     @Get('')
